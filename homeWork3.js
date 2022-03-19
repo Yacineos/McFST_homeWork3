@@ -33,3 +33,51 @@ function compare2object(obj1, obj2) {
 
 console.log(compare2object(Yacine, Omar));
 //Exercice 2 :
+function difference(arr1 ,arr2){
+    let arr3 =[];
+    let i = 0, j =0;
+
+    arr1.sort();
+    arr2.sort();
+
+    if(arr1.length>=arr2.length){
+         while(i<arr1.length){
+             while(j<arr2.length){
+                 if(arr1[i]===arr2[j]){
+                  arr3.push(arr1[i]);
+                  i++;
+                  j++;
+                }else if(arr1[i]<arr2[j]){
+                     i++;
+                    }else{
+                         j++;
+                    }
+               }
+               if(j === arr2.length){
+                break;
+            }
+           }
+    
+     }else{
+         while(j<arr2.length){
+           while(i<arr1.length){
+            if(arr1[i]===arr2[j]){
+                arr3.push(arr1[i]);
+                i++;
+                j++;
+            }else if(arr2[j]<arr1[i]){
+                j++;
+            }else{
+                i++;
+            }
+        }
+        if(i === arr1.length){
+            break;
+        }
+    }
+    
+  }
+  return arr3;
+}
+
+console.log(difference([1,2,3,0],[100,2,3,0,1,10]));

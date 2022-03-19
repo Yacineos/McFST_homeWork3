@@ -10,6 +10,7 @@ Omar = {
   age: 30,
   job: "Project manager",
 };
+
 function compare2object(obj1, obj2) {
   // the logic behind this function is that I'll iterate the object
   // properties of the object with the least property , 
@@ -37,8 +38,8 @@ function difference(arr1 ,arr2){
     let arr3 =[];
     let i = 0, j =0;
 
-    arr1.sort();
-    arr2.sort();
+    arr1.sort((a , b) => a-b);
+    arr2.sort((a , b) => a-b);
 
     if(arr1.length>=arr2.length){
          while(i<arr1.length){
@@ -80,4 +81,4 @@ function difference(arr1 ,arr2){
   return arr3;
 }
 
-console.log(difference([1,2,3,0],[100,2,3,0,1,10]));
+console.log(difference([1,2,4,3,0],[4,100,2,3,0,1,10]));
